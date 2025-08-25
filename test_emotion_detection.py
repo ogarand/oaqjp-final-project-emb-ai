@@ -4,6 +4,11 @@ from EmotionDetection.emotion_detection import emotion_detector
 
 class EmotionDetectorTests(unittest.TestCase):
     def test_joy(self):
+        text = ""
+        result = emotion_detector(text)
+        self.assertIsInstance(result, dict)
+        self.assertEqual(result.get("dominant_emotion"), "None")
+    def test_joy(self):
         text = "I am glad this happened"
         result = emotion_detector(text)
         self.assertIsInstance(result, dict)
